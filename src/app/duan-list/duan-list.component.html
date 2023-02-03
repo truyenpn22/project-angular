@@ -1,0 +1,87 @@
+
+<main>
+    <div class="table-data">
+        <div class="order">          
+                <input type class="form-control" name="searchName" [(ngModel)]="searchName" (keyup)="searchByName()"><br>
+            <div class="head">
+                <h3 style="color: #3c91e6;">Danh sách dự án</h3>
+                <a href="#">Nhập thêm</a>
+            </div>
+            <table id="danhsach">
+                <thead>
+                    <tr style="text-align: center;">
+                              <th> id </th>
+                              <th> Tên dự án</th>
+                              <th> Ngày start</th>
+                              <th> Tiền</th>
+                            </tr>
+                </thead>
+                <tbody>							
+                    <tr *ngFor="let da of listDuan">
+                              <td> {{da.id}} </td>
+                              <td [routerLink]="['/duan', da.id]">{{da.tenDuAn}}</td>
+                              <td> {{da.ngayStart}}</td>
+                              <td> {{da.tien.toLocaleString('vi-VN')+ " VNĐ"}}</td>
+                        <td>
+                            <a href="" [routerLink]="['/suaDuan', da.id]" routerLinkActive="router-link-active"   class="edit"><i class='bx bxs-edit-alt '></i></a>
+                            <a href="" (click)="xoaDA(da.id)" class="trash"><i class='bx bxs-trash'></i></a>
+                        </td>
+                            </tr>
+                    <!-- <tr>
+                        <td>2</td>
+                        <td>Naruto</td>
+                        <td>
+                            <img src="img/pokemon.jpg" max-width="" alt="">
+                        </td>
+                        <td>$100</td>
+                        <td>5</td>
+                        <td>
+                            <a href="" class="edit"><i class='bx bxs-edit-alt '></i></a>
+                            <a href="" class="trash"><i class='bx bxs-trash'></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Naruto</td>
+                        <td>
+                            <img src="img/bi_n-ni_n-s_-_-ch_-alexis-9b_a-_1__1.jpg" max-width="" alt="">
+                        </td>
+                        <td>$100</td>
+                        <td>10</td>
+                        <td>
+                            <a href="" class="edit"><i class='bx bxs-edit-alt '></i></a>
+                            <a href="" class="trash"><i class='bx bxs-trash'></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Naruto</td>
+                        <td>
+                            <img src="img/ve-cap-treo.jpg" max-width="" alt="">
+                        </td>
+                        <td>$100</td>
+                        <td>8</td>
+                        <td>
+                            <a href="" class="edit"><i class='bx bxs-edit-alt '></i></a>
+                            <a href="" class="trash"><i class='bx bxs-trash'></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Naruto</td>
+                        <td>
+                            <img src="img/dr.-stone.jpg" max-width="" alt="">
+                        </td>
+                        <td>$100</td>
+                        <td>1</td>
+                        <td>
+                            <a href="" class="edit"><i class='bx bxs-edit-alt '></i></a>
+                            <a href="" class="trash"><i class='bx bxs-trash'></i></a>
+                        </td>
+                    </tr> -->
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

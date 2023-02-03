@@ -1,0 +1,27 @@
+
+    <div class="login-page">
+        <div class="form">
+          <form #frmUS="ngForm" (ngSubmit)="dathem(frmUS.value)" class="login-form">
+            <input required #errName="ngModel" [(ngModel)]="un"  name="un" type="text" placeholder="username"/>
+            <div *ngIf="errName.invalid && (errName.dirty || errName.touched)"class=" text-danger">
+              <div *ngIf="errName.errors?.['required']">
+                Xin mời nhập Name.
+            </div>
+            </div>
+            <input required #errPass="ngModel" [(ngModel)]="pw" ngModel name="pw"  type="password" placeholder="password"/>
+            <div *ngIf="errPass.invalid && (errPass.dirty || errPass.touched)"class=" text-danger">
+              <div *ngIf="errPass.errors?.['required']">
+                Xin mời nhập password.
+            </div>
+            </div>
+            <input required #errEmail="ngModel" [(ngModel)]="email" ngModel name="email" type="text" placeholder="email"/>
+            <div *ngIf="errEmail.invalid && (errEmail.dirty || errEmail.touched)"class=" text-danger">
+              <div *ngIf="errEmail.errors?.['required']">
+                Xin mời nhập Email.
+            </div>
+            </div>
+            <button>Đăng ký</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
+        </div>
+      </div>

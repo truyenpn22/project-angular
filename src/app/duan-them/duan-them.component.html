@@ -1,0 +1,32 @@
+<main>
+    <div class="table-data">
+      <form #frmDA="ngForm" action="" method="POST" class="form-add" (ngSubmit)="dathem(frmDA.value)">
+        <h3 class="text-center" style="color: #3c91e6;">THÊM DỰ ÁN</h3>
+        <div class="form-group">
+          <label class="" >Tên dự án</label>
+          <input type="text" [(ngModel)]="tenDuAn" required minlength="3" #loitenDuAn="ngModel" name="tenDuAn" class="form-control">        
+          <em *ngIf="loitenDuAn.invalid" class="text-danger">
+            Xin mời nhập tên dự án .
+        </em>
+        </div>
+        <div class="form-group" >
+          <label class="" >Ngày bắt đầu</label>
+          <input  type="date" [(ngModel)]="ngayStart" required minlength="8" #loidate="ngModel" name="ngayStart" class="form-control">
+          <em *ngIf="loidate.invalid" class="text-danger"> 
+            Xim mời nhập ngày.  
+         </em>
+        </div>
+        <div class="form-group">
+          <label class="" >Giá tiền</label>
+          <input  type="number" min="1" max="999999999"  [(ngModel)]="tien" required minlength="1" #loimoney="ngModel" name="tien" class="form-control">
+          <em *ngIf="loimoney.invalid" class="text-danger"> 
+            Xin mời nhập giá tiền .  
+         </em>
+        </div>
+        <div class="button">
+          <button type="submit" class="btn" id="btnLuu">THÊM DỰ ÁN</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  

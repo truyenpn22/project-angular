@@ -1,0 +1,52 @@
+<main>
+    <div class="table-data">
+      <form #frmTK="ngForm" action="" method="POST" class="form-add" (ngSubmit)="daSua(frmTK.value)">
+        <h3 class="text-center" style="color: #3c91e6;">SỬA TASK</h3>
+        <div class="form-group">
+          <label class="" >ID</label>
+          <input [(ngModel)]="tk.id" value="{{tk.id}}" name="id" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="" >Tên Task</label>
+          <input [(ngModel)]="tk.tenTask" value="{{tk.tenTask}}" name="tenTask" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="" >Nhân viên</label>
+          <select [(ngModel)]="tk.nhanvienID" value="{{tk.nhanvienID}}" name="nhanvienID" class="form-control">
+            <option value="0">Chọn nhân viên</option>
+            <option value="{{nv.id}}" *ngFor="let nv of listNhanVien">{{nv.id}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="" >Dự án</label>
+          <select [(ngModel)]="tk.duAnID" value="{{tk.duAnID}}"  name="duAnID" class="form-control">
+            <option value="0">Chọn Dự Án</option>
+            <option value="{{da.id}}" *ngFor="let da of listDuAn">{{da.id}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="" >Priority</label>
+          <select [(ngModel)]="tk.priority" value="{{tk.priority}}" name="priority" class="form-control">
+            <option value="0">Chọn Priority</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="" >Status</label>
+          <select [(ngModel)]="tk.status" value="{{tk.status}}" name="status" class="form-control">
+            <option value="0">Chọn Priority</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="" >Mô tả</label>
+          <textarea [(ngModel)]="tk.moTa" value="{{tk.moTa}}"   name="moTa" type="text" cols="30" rows="5" class="form-control"  style="color: #3C91E6;"></textarea>
+        </div>
+        <div class="button">
+          <button type="submit" class="btn" id="btnLuu">CẬP NHẬT TASK</button>
+        </div>
+      </form>
+    </div>
+  </main>

@@ -1,0 +1,49 @@
+<main>
+    <div class="table-data">
+      <form #frmTK="ngForm" action="" method="POST" class="form-add" (ngSubmit)="dathem(frmTK.value)">
+        <h3 class="text-center" style="color: #3c91e6;">THÊM NHÂN VIÊN</h3>
+        <div class="form-group">
+          <label class="" >Họ</label>
+          <input type="text"  class="form-control" [(ngModel)]="ho" required minlength="3" #loiho="ngModel" name="ho" >
+          <em *ngIf="loiho.invalid" class="text-danger">
+            Xin mời nhập họ.
+        </em>
+        </div>
+        <div class="form-group">
+            <label class="" >Tên</label>
+            <input type="text"  class="form-control" [(ngModel)]="ten" required minlength="0" #loiten="ngModel" name="ten" >
+            <em *ngIf="loiten.invalid" class="text-danger">
+              Xin mời nhập tên.
+          </em>
+          </div>
+        <div class="form-group" >
+          <label class="" >Ngày sinh</label>
+          <input  type="date" class="form-control" [(ngModel)]="ngaysinh" required minlength="6" #loingaysinh="ngModel" name="ngaysinh" >
+          <em *ngIf="loingaysinh.invalid" class="text-danger">
+            Xin mời nhập ngày.
+        </em>
+        </div>
+        <div class="form-group">
+          <label class="">Giới tính</label>
+          <select id="cat_id" class="form-control" [(ngModel)]="phai" required minlength="0" name="phai" #loigtinh="ngModel">
+          <option value="">Chọn giới tính</option>
+           <option value="1">Nam</option>
+           <option value="2">Nữ</option>
+          </select>
+          <em *ngIf="loigtinh.invalid" class="text-danger">
+           Xin mời nhập giới tính.
+       </em>
+      </div>
+      <div class="form-group">
+        <label class="" >Khu vực</label>
+        <input type="text" class="form-control" [(ngModel)]="khuvuc" required minlength="3" #loikhuvuc="ngModel" name="khuvuc" >
+        <em *ngIf="loikhuvuc.invalid" class="text-danger">
+          Xin mời nhập khu vực.
+      </em>
+      </div>
+        <div class="button">
+          <button type="submit" class="btn" id="btnLuu">THÊM NHÂN VIÊN</button>
+        </div>
+      </form>
+    </div>
+  </main>

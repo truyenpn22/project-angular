@@ -1,0 +1,66 @@
+<main>
+    <div class="table-data">
+      <form #frmTK="ngForm" action="" method="POST" class="form-add" (ngSubmit)="dathem(frmTK.value)">
+        <h3 class="text-center" style="color: #3c91e6;">THÊM TASK</h3>
+        <div class="form-group">
+          <label class="" >Tên Task</label>
+          <input [(ngModel)]="tenTask" required minlength="6" #loitenTask="ngModel" name="tenTask" type="text" class="form-control">
+          <em *ngIf="loitenTask.invalid" class="text-danger"> 
+            Xin mời nhập tên task.  
+         </em>
+        </div>
+        <div class="form-group">
+          <label class="" >Nhân viên</label>
+          <select [(ngModel)]="nhanvienID" required minlength="6" #loinhanvienID="ngModel" name="nhanvienID" class="form-control">
+            <option value="">Chọn nhân viên</option>
+            <option value="{{nv.id}}" *ngFor="let nv of listNhanVien">{{nv.id}}</option>
+          </select>
+          <em *ngIf="loinhanvienID.invalid" class="text-danger"> 
+            Xin mời nhập nhân viên.  
+         </em>
+        </div>
+        <div class="form-group">
+          <label class="" >Dự án</label>
+          <select [(ngModel)]="duAnID" required minlength="6" #loiduAnID="ngModel"  name="duAnID" class="form-control">
+            <option value="">Chọn Dự Án</option>
+            <option value="{{da.id}}" *ngFor="let da of listDuAn">{{da.id}}</option>
+          </select>
+          <em *ngIf="loiduAnID.invalid" class="text-danger"> 
+            Xin mời nhập dự án.  
+         </em>
+        </div>
+        <div class="form-group">
+          <label class="" >Priority</label>
+          <select [(ngModel)]="priority" required minlength="6" #loipriority="ngModel"  name="priority" class="form-control">
+            <option value="">Chọn Priority</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+          <em *ngIf="loipriority.invalid" class="text-danger"> 
+            Xin mời nhập priority.  
+         </em>
+        </div>
+        <div class="form-group">
+          <label class="" >Status</label>
+          <select [(ngModel)]="status" required minlength="6" #loistatus="ngModel"  name="status" class="form-control">
+            <option value="">Chọn status</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+          <em *ngIf="loistatus.invalid" class="text-danger"> 
+            Xin mời nhập status.  
+         </em>
+        </div>
+        <div class="form-group">
+          <label class="" >Mô tả</label>
+          <textarea [(ngModel)]="moTa" required minlength="6" #loimoTa="ngModel"  name="moTa" type="text" cols="30" rows="5" class="form-control"  style="color: #3C91E6;"></textarea>
+          <em *ngIf="loimoTa.invalid" class="text-danger"> 
+            Xin mời nhập mô tả.  
+         </em>
+        </div>
+        <div class="button">
+          <button type="submit" class="btn" id="btnLuu">THÊM TASK</button>
+        </div>
+      </form>
+    </div>
+  </main>

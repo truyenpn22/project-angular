@@ -1,0 +1,34 @@
+<main>
+    <div class="table-data">
+        <div class="order">
+            <!-- <input class="form-control" name="tk" [(ngModel)]="tk" (keyup)="locSP()"><br> -->
+            <div class="head">
+                <h3>Danh sách dự án</h3>
+                <a  href="#">Nhập thêm</a>
+
+            </div>
+            <table>
+                <thead>
+                  <div> 
+                      <b>{{tk.tenTask}} </b><br>
+                      {{tk.moTa}} 
+                  </div>
+                  <div class="mb-3 border-bottom row">
+                      <div class="col-6">
+                      Priority: {{tk.priority}}<br>
+                      Status: {{tk.status}}
+                      </div>
+                      <div class="col-6">
+                      Nhân viên  {{tk.nhanvienID}}<br>
+                      Dự án: {{tk.duAnID}}
+                      </div>
+                  </div>
+                </thead>
+               
+              </table>
+        </div>
+    </div>
+</main>
+
+
+  

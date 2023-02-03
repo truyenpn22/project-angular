@@ -1,0 +1,37 @@
+<main>
+  <div class="table-data">
+    <form #frmSNV="ngForm" action="" class="form-add" (ngSubmit)="daSua(frmSNV.value)">
+      <h3 class="text-center" style="color: #3c91e6;">SỬA NHÂN VIÊN</h3>
+      <div class="form-group">
+        <label class="">ID nhân viên</label>
+        <input type="text" [(ngModel)]="nv.id" value="{{nv.id}}" name="id" class="form-control">
+      </div>
+      <div class="form-group">
+        <label class="">Họ</label>
+        <input type="text" class="form-control" [(ngModel)]="nv.ho" value="{{nv.ho}}" name="ho">
+      </div>
+      <div class="form-group">
+        <label class="">Tên</label>
+        <input type="text" class="form-control" [(ngModel)]="nv.ten" value="{{nv.ten}}" name="ten">
+      </div>
+      <div class="form-group">
+        <label class="">Ngày sinh</label>
+        <input type="date" [(ngModel)]="nv.ngaysinh" value="{{nv.ngaysinh}}" name="ngaysinh" class="form-control">
+      </div>
+      <!-- <div class="form-group">
+        <label class="">Giới tính</label>
+        <select class="form-control" [(ngModel)]="nv.phai" value="{{nv.phai}}" name="phai">
+          <option value="1">Nam</option>
+          <option value="2">Nữ</option>`
+        </select>
+      </div> -->
+      <div class="form-group">
+        <label class="">Khu vực</label>
+        <input type="text" class="form-control" [(ngModel)]="nv.khuvuc" value="{{nv.khuvuc}}" name="khuvuc">
+      </div>
+      <div class="button">
+        <button type="submit" class="btn" id="btnLuu">CẬP NHẬT DỰ ÁN</button>
+      </div>
+    </form>
+  </div>
+</main>
